@@ -506,9 +506,20 @@ var CONFIG = {
   /* Formato internacional, sin + ni espacios. México: 52 + 10 dígitos */
   whatsapp: "521XXXXXXXXXX",
 
-  /* Webhook de PRODUCCIÓN de n8n (no el de test).
-     Requiere que el flujo esté guardado y en Active. */
-  webhook: "https://solutionsmx.app.n8n.cloud/webhook/mayan-spa",
+  /* Webhook del flujo "Mayan Spa" en n8n.
+
+     modo_prueba: true  -> usa webhook_prueba (/webhook-test/).
+       Solo recibe datos mientras presionas "Escuchar el evento de prueba"
+       en n8n, y únicamente UNA vez por cada clic.
+
+     modo_prueba: false -> usa webhook (/webhook/).
+       Requiere que el flujo esté guardado y Publicado (Active) en n8n.
+
+     ⚠️ Antes de publicar el sitio para clientes reales, pon modo_prueba
+        en false. Si se queda en true, los registros no se guardan. */
+  modo_prueba: true,
+  webhook:        "https://solutionsmx.app.n8n.cloud/webhook/mayan-spa",
+  webhook_prueba: "https://solutionsmx.app.n8n.cloud/webhook-test/mayan-spa",
 
   moneda: "$",
   direccion: "Marina Las Palmas 1 local 27, a un costado de nautico, frente a los yates",
@@ -671,7 +682,8 @@ function enviarWhatsApp(texto){
      página salta a otra app (WhatsApp). Si no existe, cae a fetch.
    - Nunca bloquea: si falla, el cliente igual llega por WhatsApp. */
 function registrarEnN8N(datos){
-  if (!CONFIG.webhook) return;
+  var url = CONFIG.modo_prueba ? CONFIG.webhook_prueba : CONFIG.webhook;
+  if (!url) return;
 
   var cuerpo = new URLSearchParams();
   for (var k in datos){
@@ -684,9 +696,9 @@ function registrarEnN8N(datos){
     if (navigator.sendBeacon){
       var blob = new Blob([cuerpo.toString()],
         { type: 'application/x-www-form-urlencoded;charset=UTF-8' });
-      if (navigator.sendBeacon(CONFIG.webhook, blob)) return;
+      if (navigator.sendBeacon(url, blob)) return;
     }
-    fetch(CONFIG.webhook, {
+    fetch(url, {
       method: 'POST',
       body: cuerpo,
       mode: 'no-cors',

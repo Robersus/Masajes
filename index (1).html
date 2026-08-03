@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mayan Biomedical Center Spa · Masajes holísticos</title>
+<meta name="description" content="Masajes holísticos y fitoterapia en Marina Las Palmas. Relajante, tejido profundo, deportivo, drenaje linfático y más. Agenda tu cita por WhatsApp.">
+<meta name="theme-color" content="#C6A184">
+<meta name="color-scheme" content="light only">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   PALETA  (todos los valores son sólidos, sin transparencia,
+   para que ningún navegador en modo oscuro los altere)
+   ========================================================= */
+:root{
+  --arena:#C6A184;
+  --arena-tarjeta:#F2E4D6;
+  --arena-tarjeta-hover:#EDDAC7;
+  --arena-borde:#D9BFA4;
+  --cacao:#33241B;
+  --cacao-suave:#5C4335;
+  --cacao-hover:#1F140E;
+  --crema:#FBF6F0;
+  --blanco:#FFFFFF;
+  --terracota:#B86234;
+  --linea:#E4D3C0;
+  --max:920px;
+}
+
+*{box-sizing:border-box}
+
+html{
+  scroll-behavior:smooth;
+  color-scheme:light;
+  background-color:#FBF6F0;
+  -webkit-text-size-adjust:100%;
+}
+
+body{
+  margin:0;
+  background-color:#FBF6F0;
+  color:#33241B;
+  font-family:'Jost',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-weight:300;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+img{max-width:100%;display:block}
+a{color:inherit}
+
+.wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
+
+h1,h2,h3{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-weight:600;line-height:1.08;margin:0
+}
+
+.eyebrow{
+  font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;
+  font-weight:400;color:#5C4335;margin:0 0 14px
+}
+
+.hoja{position:absolute;opacity:.13;pointer-events:none;color:#FFFFFF}
+
+:focus-visible{outline:2px solid #B86234;outline-offset:3px}
+
+/* =========================================================
+   BANNER PRINCIPAL
+   ========================================================= */
+.hero{
+  position:relative;overflow:hidden;
+  background-color:#C6A184;
+  padding:66px 0 76px;text-align:center;
+}
+.hero .hoja{top:-40px;left:-70px;width:340px;transform:rotate(-12deg)}
+.hero .hoja.b{top:auto;left:auto;bottom:-90px;right:-80px;width:300px;transform:rotate(160deg)}
+
+.marca{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.6rem,11vw,4.2rem);
+  letter-spacing:.14em;color:#FFFFFF;line-height:1;margin:0 0 6px;
+  position:relative
+}
+.submarca{
+  font-size:clamp(.82rem,3.4vw,1rem);letter-spacing:.2em;text-transform:uppercase;
+  color:#FFFFFF;margin:0 0 26px;position:relative
+}
+.terapeuta{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:clamp(1.5rem,6vw,2rem);color:#33241B;margin:0;position:relative
+}
+.terapeuta small{
+  display:block;font-family:'Jost',sans-serif;font-style:normal;font-size:.72rem;
+  letter-spacing:.28em;text-transform:uppercase;color:#5C4335;margin-top:8px
+}
+.lema{
+  margin:30px 0 0;font-size:.85rem;letter-spacing:.32em;
+  text-transform:uppercase;color:#FFFFFF;position:relative
+}
+
+/* =========================================================
+   BOTONES
+   ========================================================= */
+.btn{
+  display:inline-flex;align-items:center;gap:9px;justify-content:center;
+  padding:15px 28px;border-radius:999px;border:1px solid transparent;
+  font-family:'Jost',sans-serif;font-size:.82rem;font-weight:400;
+  letter-spacing:.16em;text-transform:uppercase;text-decoration:none;
+  cursor:pointer;transition:transform .18s ease,background-color .18s ease;
+}
+.btn:active{transform:scale(.97)}
+.btn-primario{background-color:#33241B;color:#FBF6F0}
+.btn-primario:hover{background-color:#1F140E}
+
+.btn-mini{
+  padding:12px 22px;font-size:.8rem;letter-spacing:.14em;
+  background-color:#33241B;color:#FBF6F0;
+  border:1px solid #33241B;border-radius:999px;
+  cursor:pointer;font-family:'Jost',sans-serif;
+  text-transform:uppercase;transition:background-color .18s ease
+}
+.btn-mini:hover{background-color:#1F140E}
+
+.btn-claro{
+  padding:11px 20px;font-size:.72rem;letter-spacing:.16em;
+  background-color:#FFFFFF;color:#33241B;border:1px solid #D9BFA4;
+  border-radius:999px;text-transform:uppercase;text-decoration:none;
+  display:inline-block;font-family:'Jost',sans-serif
+}
+.btn-claro:hover{background-color:#F2E4D6}
+
+/* =========================================================
+   SECCIONES
+   ========================================================= */
+.seccion{padding:72px 0}
+.seccion-titulo{font-size:clamp(2rem,7vw,2.9rem);margin-bottom:10px;color:#33241B}
+.seccion-intro{max-width:50ch;color:#5C4335;font-size:1.12rem;margin:0 0 42px}
+
+/* =========================================================
+   CARTA DE MASAJES  ·  tarjeta por servicio
+   ========================================================= */
+#carta{padding-left:14px;padding-right:30px}
+
+.carta{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+
+.item{
+  background-color:#F2E4D6;
+  border:1px solid #D9BFA4;
+  border-radius:18px;
+  padding:26px 24px;
+  transition:background-color .2s ease;
+}
+.item:hover{background-color:#EDDAC7}
+
+.item-fila{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+
+.item-nombre{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.1rem,8.5vw,2.8rem);
+  font-weight:600;line-height:1.06;color:#33241B
+}
+
+.puntos{
+  flex:1;min-width:24px;
+  border-bottom:1px dotted #B08E70;transform:translateY(-9px)
+}
+
+.item-precio{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.6rem;font-weight:600;color:#33241B;
+  white-space:nowrap;flex-shrink:0
+}
+
+.item-desc{
+  margin:12px 0 0;color:#5C4335;
+  font-size:1.16rem;line-height:1.62;max-width:54ch
+}
+
+.item-pie{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:20px}
+
+.duracion{
+  font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;
+  color:#5C4335;border:1px solid #C9A98C;
+  padding:9px 16px;border-radius:999px;background-color:#FFFFFF
+}
+
+.tag-popular{
+  font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;
+  background-color:#B86234;color:#FFFFFF;padding:9px 15px;border-radius:999px
+}
+
+/* =========================================================
+   CURSOS
+   ========================================================= */
+.curso{background-color:#C6A184;position:relative;overflow:hidden}
+.curso .hoja{bottom:-70px;left:-60px;width:260px;transform:rotate(35deg)}
+
+.curso-panel{
+  position:relative;
+  background-color:#FBF6F0;
+  border:1px solid #E4D3C0;
+  border-radius:20px;
+  padding:36px 30px;max-width:640px;
+  box-shadow:0 14px 40px rgba(51,36,27,.16)
+}
+.curso-panel .seccion-titulo{margin-bottom:18px}
+.curso-panel p{
+  color:#5C4335;font-size:1.12rem;line-height:1.65;
+  margin:0 0 14px;max-width:52ch
+}
+.curso-panel p:last-of-type{margin-bottom:0}
+
+/* =========================================================
+   UBICACIÓN
+   ========================================================= */
+.ubicacion-grid{display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:680px){.ubicacion-grid{grid-template-columns:1fr 1fr}}
+
+.tarjeta{
+  background-color:#FFFFFF;
+  border:1px solid #E4D3C0;
+  border-radius:18px;padding:28px
+}
+.tarjeta h3{font-size:1.5rem;margin-bottom:10px;color:#33241B}
+.tarjeta p{margin:0;color:#5C4335;font-size:1.02rem}
+
+.horario{list-style:none;padding:0;margin:0}
+.horario li{
+  display:flex;justify-content:space-between;
+  padding:8px 0;font-size:1.02rem;color:#5C4335
+}
+
+/* =========================================================
+   PIE
+   ========================================================= */
+footer{
+  background-color:#33241B;color:#E8DDD3;
+  padding:48px 0 120px;text-align:center
+}
+footer .marca{font-size:1.9rem;color:#FBF6F0;letter-spacing:.16em}
+footer p{font-size:.86rem;margin:10px 0 0;color:#E8DDD3}
+footer .legal{margin-top:20px;font-size:.74rem;color:#BFAE9F}
+
+/* =========================================================
+   BOTÓN FLOTANTE
+   ========================================================= */
+.flotante{
+  position:fixed;left:16px;right:16px;bottom:16px;z-index:40;
+  display:flex;justify-content:center
+}
+.flotante .btn{width:100%;max-width:420px;box-shadow:0 12px 34px rgba(51,36,27,.4)}
+
+/* =========================================================
+   MODALES
+   ========================================================= */
+.modal{
+  position:fixed;inset:0;z-index:60;display:none;
+  align-items:flex-end;justify-content:center;
+  background-color:rgba(41,29,22,.6)
+}
+.modal.abierto{display:flex}
+
+.modal-caja{
+  background-color:#FBF6F0;width:100%;max-width:480px;
+  border-radius:22px 22px 0 0;padding:28px 22px 26px;
+  max-height:92vh;overflow-y:auto;animation:sube .28s ease
+}
+@media(min-width:560px){
+  .modal{align-items:center}
+  .modal-caja{border-radius:22px}
+}
+@keyframes sube{from{transform:translateY(24px);opacity:0}to{transform:none;opacity:1}}
+
+.modal h2{font-size:1.9rem;margin-bottom:4px;color:#33241B}
+.modal .sub{color:#5C4335;font-size:.95rem;margin:0 0 22px}
+
+.modal-head{position:relative;padding-right:34px}
+.cerrar{
+  position:absolute;top:0;right:0;background:none;border:0;font-size:1.7rem;
+  color:#5C4335;cursor:pointer;line-height:1;padding:4px 8px
+}
+
+.campo{margin-bottom:16px}
+.campo label{
+  display:block;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
+  color:#5C4335;margin-bottom:7px
+}
+.campo input,.campo select,.campo textarea{
+  width:100%;padding:14px;border:1px solid #D9BFA4;border-radius:10px;
+  background-color:#FFFFFF;font-family:'Jost',sans-serif;
+  font-size:1rem;font-weight:300;color:#33241B
+}
+.campo textarea{resize:vertical;min-height:70px}
+
+.aviso-error{
+  display:none;background-color:#FBE9E4;border:1px solid #E0A99A;
+  color:#8A3B24;border-radius:10px;padding:12px 14px;
+  font-size:.92rem;margin-bottom:16px
+}
+.aviso-error.visible{display:block}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* =========================================================
+   BLINDAJE CONTRA MODO OSCURO DEL SISTEMA
+   Safari/iOS repinta fondos y texto aunque la página sea clara.
+   Aquí se reimponen los colores originales.
+   ========================================================= */
+@media (prefers-color-scheme: dark){
+  html,body{background-color:#FBF6F0!important;color:#33241B!important}
+
+  .hero,.curso{background-color:#C6A184!important}
+  .marca,.submarca,.lema{color:#FFFFFF!important;-webkit-text-fill-color:#FFFFFF}
+  .terapeuta{color:#33241B!important;-webkit-text-fill-color:#33241B}
+  .terapeuta small{color:#5C4335!important;-webkit-text-fill-color:#5C4335}
+
+  .item{background-color:#F2E4D6!important;border-color:#D9BFA4!important}
+  .item-nombre,.item-precio{color:#33241B!important;-webkit-text-fill-color:#33241B}
+  .item-desc{color:#5C4335!important;-webkit-text-fill-color:#5C4335}
+  .duracion{background-color:#FFFFFF!important;color:#5C4335!important;-webkit-text-fill-color:#5C4335}
+  .tag-popular{background-color:#B86234!important;color:#FFFFFF!important;-webkit-text-fill-color:#FFFFFF}
+
+  .seccion-titulo,.tarjeta h3,.modal h2{color:#33241B!important;-webkit-text-fill-color:#33241B}
+  .seccion-intro,.eyebrow,.tarjeta p,.horario li,.curso-panel p,.modal .sub,.campo label{
+    color:#5C4335!important;-webkit-text-fill-color:#5C4335
+  }
+
+  .curso-panel,.modal-caja{background-color:#FBF6F0!important}
+  .tarjeta{background-color:#FFFFFF!important}
+
+  .campo input,.campo select,.campo textarea{
+    background-color:#FFFFFF!important;color:#33241B!important;-webkit-text-fill-color:#33241B
+  }
+
+  .btn-primario,.btn-mini{
+    background-color:#33241B!important;color:#FBF6F0!important;-webkit-text-fill-color:#FBF6F0
+  }
+  .btn-claro{background-color:#FFFFFF!important;color:#33241B!important;-webkit-text-fill-color:#33241B}
+
+  footer{background-color:#33241B!important}
+  footer p{color:#E8DDD3!important;-webkit-text-fill-color:#E8DDD3}
+  footer .marca{color:#FBF6F0!important;-webkit-text-fill-color:#FBF6F0}
+  footer .legal{color:#BFAE9F!important;-webkit-text-fill-color:#BFAE9F}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <svg class="hoja" viewBox="0 0 200 200" fill="currentColor" aria-hidden="true"><path d="M100 10C60 40 30 80 30 125c0 38 30 65 70 65s70-27 70-65C170 80 140 40 100 10zm0 30c6 30 6 90 0 140-6-50-6-110 0-140z"/></svg>
+  <svg class="hoja b" viewBox="0 0 200 200" fill="currentColor" aria-hidden="true"><path d="M100 10C60 40 30 80 30 125c0 38 30 65 70 65s70-27 70-65C170 80 140 40 100 10zm0 30c6 30 6 90 0 140-6-50-6-110 0-140z"/></svg>
+  <div class="wrap">
+    <h1 class="marca">MAYAN</h1>
+    <p class="submarca">Biomedical Center Spa</p>
+    <p class="terapeuta">Christian Reyes<small>Fitoterapeuta</small></p>
+    <p class="lema">Masajes holísticos</p>
+  </div>
+</header>
+
+<main>
+
+  <section class="seccion wrap" id="carta">
+    <p class="eyebrow">Carta de masajes</p>
+    <h2 class="seccion-titulo">Diez terapias, un mismo objetivo</h2>
+    <p class="seccion-intro">Cada sesión se ajusta a lo que tu cuerpo necesita ese día. Si no sabes cuál elegir, escríbenos y te orientamos antes de reservar.</p>
+    <ul class="carta" id="lista-masajes"></ul>
+  </section>
+
+  <section class="seccion curso" id="curso">
+    <svg class="hoja" viewBox="0 0 200 200" fill="currentColor" aria-hidden="true"><path d="M100 10C60 40 30 80 30 125c0 38 30 65 70 65s70-27 70-65C170 80 140 40 100 10zm0 30c6 30 6 90 0 140-6-50-6-110 0-140z"/></svg>
+    <div class="wrap">
+      <div class="curso-panel">
+        <h2 class="seccion-titulo">Cursos</h2>
+        <p>Formación en masaje impartida por Christian Reyes, fitoterapeuta. Grupos reducidos, práctica desde la primera sesión y material incluido. Sirve tanto para empezar desde cero como para sumar técnica a lo que ya haces.</p>
+        <p>Las fechas y los cupos se abren por generación. Déjanos tus datos y te avisamos del próximo inicio con temario e inversión.</p>
+        <button class="btn btn-primario" id="abrir-informes" style="margin-top:22px">Pedir informes</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion wrap" id="visitanos">
+    <p class="eyebrow">Visítanos</p>
+    <h2 class="seccion-titulo">Dónde estamos</h2>
+    <p class="seccion-intro">A un costado del náutico, frente a los yates.</p>
+    <div class="ubicacion-grid">
+      <div class="tarjeta">
+        <h3>Marina Las Palmas 1, local 27</h3>
+        <p>A un costado de náutico, frente a los yates.</p>
+        <p style="margin-top:18px"><a class="btn-claro" id="link-mapa" href="#" target="_blank" rel="noopener">Abrir en Google Maps</a></p>
+      </div>
+      <div class="tarjeta">
+        <h3>Horario</h3>
+        <ul class="horario">
+          <li><span>Lunes a viernes</span><span>9:00 – 19:00</span></li>
+          <li><span>Sábado</span><span>9:00 – 15:00</span></li>
+          <li><span>Domingo</span><span>Cerrado</span></li>
+        </ul>
+        <p style="margin-top:16px;font-size:.9rem">Atención con cita previa.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="marca">MAYAN</p>
+    <p>Biomedical Center Spa · Christian Reyes, Fitoterapeuta</p>
+    <p>Marina Las Palmas 1, local 27</p>
+    <p class="legal">Los masajes son terapias de bienestar y no sustituyen atención médica.</p>
+  </div>
+</footer>
+
+<div class="flotante">
+  <button class="btn btn-primario" data-abrir>Agendar por WhatsApp</button>
+</div>
+
+<!-- ===== MODAL: AGENDAR CITA ===== -->
+<div class="modal" id="modal-cita" role="dialog" aria-modal="true" aria-labelledby="titulo-cita">
+  <div class="modal-caja">
+    <div class="modal-head">
+      <button class="cerrar" data-cerrar="modal-cita" aria-label="Cerrar">&times;</button>
+      <h2 id="titulo-cita">Agenda tu cita</h2>
+      <p class="sub">Llena los datos y se abre WhatsApp con tu mensaje listo para enviar.</p>
+    </div>
+    <div class="aviso-error" id="error-cita"></div>
+    <div class="campo">
+      <label for="f-nombre">Tu nombre</label>
+      <input id="f-nombre" type="text" placeholder="Ana Martínez" autocomplete="name">
+    </div>
+    <div class="campo">
+      <label for="f-tel">Tu teléfono</label>
+      <input id="f-tel" type="tel" placeholder="10 dígitos" autocomplete="tel">
+    </div>
+    <div class="campo">
+      <label for="f-servicio">Servicio</label>
+      <select id="f-servicio"></select>
+    </div>
+    <div class="campo">
+      <label for="f-fecha">Día que prefieres</label>
+      <input id="f-fecha" type="date">
+    </div>
+    <div class="campo">
+      <label for="f-hora">Horario que prefieres</label>
+      <select id="f-hora">
+        <option>Mañana (9:00 – 12:00)</option>
+        <option>Mediodía (12:00 – 15:00)</option>
+        <option>Tarde (15:00 – 19:00)</option>
+      </select>
+    </div>
+    <div class="campo">
+      <label for="f-nota">Algo que debamos saber (opcional)</label>
+      <textarea id="f-nota" placeholder="Molestia en zona lumbar, primera vez, embarazo…"></textarea>
+    </div>
+    <button class="btn btn-primario" id="enviar-cita" style="width:100%">Enviar por WhatsApp</button>
+  </div>
+</div>
+
+<!-- ===== MODAL: INFORMES DEL CURSO ===== -->
+<div class="modal" id="modal-informes" role="dialog" aria-modal="true" aria-labelledby="titulo-informes">
+  <div class="modal-caja">
+    <div class="modal-head">
+      <button class="cerrar" data-cerrar="modal-informes" aria-label="Cerrar">&times;</button>
+      <h2 id="titulo-informes">Informes del curso</h2>
+      <p class="sub">Déjanos tus datos y te enviamos temario, fechas e inversión.</p>
+    </div>
+    <div class="aviso-error" id="error-informes"></div>
+    <div class="campo">
+      <label for="i-nombre">Nombre completo</label>
+      <input id="i-nombre" type="text" placeholder="Ana Martínez" autocomplete="name">
+    </div>
+    <div class="campo">
+      <label for="i-tel">Teléfono</label>
+      <input id="i-tel" type="tel" placeholder="10 dígitos" autocomplete="tel">
+    </div>
+    <div class="campo">
+      <label for="i-email">Correo electrónico</label>
+      <input id="i-email" type="email" placeholder="nombre@correo.com" autocomplete="email">
+    </div>
+    <div class="campo">
+      <label for="i-experiencia">¿Tienes experiencia previa?</label>
+      <select id="i-experiencia">
+        <option>Ninguna, empiezo desde cero</option>
+        <option>Algo de práctica, sin certificación</option>
+        <option>Ya trabajo dando masaje</option>
+      </select>
+    </div>
+    <div class="campo">
+      <label for="i-mensaje">¿Qué te gustaría saber? (opcional)</label>
+      <textarea id="i-mensaje" placeholder="Fechas, costo, si entregan certificado…"></textarea>
+    </div>
+    <button class="btn btn-primario" id="enviar-informes" style="width:100%">Enviar mis datos</button>
+    <p class="sub" style="margin:14px 0 0;text-align:center;font-size:.82rem">Se abre WhatsApp con tu solicitud lista para enviar.</p>
+  </div>
+</div>
+
+<script>
+/* =========================================================
+   CONFIG — lo único que necesitas editar
+   ========================================================= */
+var CONFIG = {
+  /* Formato internacional, sin + ni espacios. México: 52 + 10 dígitos */
+  whatsapp: "521XXXXXXXXXX",
+
+  /* URL del webhook de producción de n8n. Déjala en "" para desactivar el registro. */
+  webhook: "",
+
+  moneda: "$",
+  direccion: "Marina Las Palmas 1 local 27, a un costado de nautico, frente a los yates",
+
+  /* Deja precio en "" si prefieres no publicarlo: aparecerá "Consultar" */
+  masajes: [
+    { nombre:"Relajante",          precio:600, min:60, popular:true,
+      desc:"Maniobras suaves y continuas para bajar el ritmo, soltar tensión y dormir mejor." },
+    { nombre:"Tejido profundo",    precio:750, min:60, popular:true,
+      desc:"Presión firme en capas musculares profundas. Para contracturas viejas y cargas de trabajo." },
+    { nombre:"Deportivo",          precio:750, min:60, popular:false,
+      desc:"Antes o después del entrenamiento: activa, previene lesiones y acelera la recuperación." },
+    { nombre:"Drenaje linfático",  precio:800, min:60, popular:true,
+      desc:"Toque ligero y rítmico que ayuda a desinflamar, reducir retención de líquidos y pesadez." },
+    { nombre:"Descontracturante",  precio:750, min:60, popular:false,
+      desc:"Trabajo puntual en cuello, hombros y espalda alta. El favorito de quien vive en la computadora." },
+    { nombre:"Piedras calientes",  precio:850, min:75, popular:false,
+      desc:"Calor mineral sostenido que relaja el músculo antes de trabajarlo. Muy reconfortante." },
+    { nombre:"Aromaterapia",       precio:700, min:60, popular:false,
+      desc:"Masaje relajante con aceites esenciales seleccionados según lo que quieras equilibrar." },
+    { nombre:"Reflexología podal", precio:500, min:45, popular:false,
+      desc:"Presión en puntos del pie para aliviar cansancio general y mejorar el descanso." },
+    { nombre:"Prenatal",           precio:700, min:60, popular:false,
+      desc:"Posición lateral y presión adaptada. A partir del segundo trimestre, con embarazo sin riesgo." },
+    { nombre:"Craneofacial",       precio:550, min:45, popular:false,
+      desc:"Cabeza, rostro y cuello. Indicado para dolor de cabeza por tensión y estrés acumulado." }
+  ]
+};
+
+/* =========================================================
+   CARTA DE MASAJES
+   ========================================================= */
+(function construirCarta(){
+  var lista = document.getElementById('lista-masajes');
+  var selector = document.getElementById('f-servicio');
+
+  CONFIG.masajes.forEach(function(m){
+    var precio = m.precio ? CONFIG.moneda + m.precio : 'Consultar';
+
+    var li = document.createElement('li');
+    li.className = 'item';
+
+    var fila = document.createElement('div');
+    fila.className = 'item-fila';
+
+    var nombre = document.createElement('span');
+    nombre.className = 'item-nombre';
+    nombre.textContent = m.nombre;
+
+    var puntos = document.createElement('span');
+    puntos.className = 'puntos';
+
+    var precioEl = document.createElement('span');
+    precioEl.className = 'item-precio';
+    precioEl.textContent = precio;
+
+    fila.appendChild(nombre);
+    fila.appendChild(puntos);
+    fila.appendChild(precioEl);
+
+    var desc = document.createElement('p');
+    desc.className = 'item-desc';
+    desc.textContent = m.desc;
+
+    var pie = document.createElement('div');
+    pie.className = 'item-pie';
+
+    var dur = document.createElement('span');
+    dur.className = 'duracion';
+    dur.textContent = m.min + ' min';
+    pie.appendChild(dur);
+
+    if (m.popular){
+      var tag = document.createElement('span');
+      tag.className = 'tag-popular';
+      tag.textContent = 'Más pedido';
+      pie.appendChild(tag);
+    }
+
+    var boton = document.createElement('button');
+    boton.className = 'btn-mini';
+    boton.setAttribute('data-abrir','');
+    boton.setAttribute('data-servicio', m.nombre);
+    boton.textContent = 'Agendar';
+    pie.appendChild(boton);
+
+    li.appendChild(fila);
+    li.appendChild(desc);
+    li.appendChild(pie);
+    lista.appendChild(li);
+
+    selector.add(new Option(m.nombre, m.nombre));
+  });
+
+  selector.add(new Option('No estoy seguro, quiero orientación','No estoy seguro, quiero orientación'));
+})();
+
+/* =========================================================
+   MAPA
+   ========================================================= */
+document.getElementById('link-mapa').href =
+  'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(CONFIG.direccion);
+
+/* =========================================================
+   MODALES
+   ========================================================= */
+function abrirModal(id, foco){
+  document.getElementById(id).classList.add('abierto');
+  document.body.style.overflow = 'hidden';
+  if (foco) setTimeout(function(){ document.getElementById(foco).focus(); }, 120);
+}
+
+function cerrarModales(){
+  var abiertos = document.querySelectorAll('.modal.abierto');
+  for (var i = 0; i < abiertos.length; i++) abiertos[i].classList.remove('abierto');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('click', function(e){
+  var abrir = e.target.closest('[data-abrir]');
+  if (abrir){
+    if (abrir.getAttribute('data-servicio')){
+      document.getElementById('f-servicio').value = abrir.getAttribute('data-servicio');
+    }
+    abrirModal('modal-cita','f-nombre');
+    return;
+  }
+  if (e.target.closest('#abrir-informes')){
+    abrirModal('modal-informes','i-nombre');
+    return;
+  }
+  if (e.target.closest('[data-cerrar]') || e.target.classList.contains('modal')){
+    cerrarModales();
+  }
+});
+
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape') cerrarModales();
+});
+
+/* Fecha mínima: hoy */
+document.getElementById('f-fecha').min = new Date().toISOString().split('T')[0];
+
+function mostrarError(id, texto){
+  var caja = document.getElementById(id);
+  caja.textContent = texto;
+  caja.classList.add('visible');
+}
+
+function enviarWhatsApp(texto){
+  window.open('https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(texto), '_blank');
+}
+
+/* Envía una copia del registro a n8n.
+   Usa keepalive para que el envío sobreviva al salto a WhatsApp,
+   y no bloquea nunca: si el webhook falla, el cliente igual llega por WhatsApp. */
+function registrarEnN8N(datos){
+  if (!CONFIG.webhook) return;
+  try {
+    fetch(CONFIG.webhook, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(datos),
+      keepalive: true,
+      mode: 'cors'
+    }).catch(function(){ /* silencioso a propósito */ });
+  } catch (e) { /* silencioso a propósito */ }
+}
+
+function selloDeTiempo(){
+  var d = new Date();
+  function dosDigitos(n){ return (n < 10 ? '0' : '') + n; }
+  return d.getFullYear() + '-' + dosDigitos(d.getMonth()+1) + '-' + dosDigitos(d.getDate()) +
+         ' ' + dosDigitos(d.getHours()) + ':' + dosDigitos(d.getMinutes());
+}
+
+/* =========================================================
+   ENVÍO: CITA
+   ========================================================= */
+document.getElementById('enviar-cita').addEventListener('click', function(){
+  var nombre = document.getElementById('f-nombre').value.trim();
+  var tel    = document.getElementById('f-tel').value.trim();
+  document.getElementById('error-cita').classList.remove('visible');
+
+  if (!nombre || !tel){
+    mostrarError('error-cita','Necesitamos tu nombre y teléfono para confirmarte la cita.');
+    return;
+  }
+
+  var servicio = document.getElementById('f-servicio').value;
+  var valorFecha = document.getElementById('f-fecha').value;
+  var dia = valorFecha
+    ? new Date(valorFecha + 'T12:00:00').toLocaleDateString('es-MX',
+        { weekday:'long', day:'numeric', month:'long' })
+    : 'el día que tengan disponible';
+  var hora = document.getElementById('f-hora').value;
+  var nota = document.getElementById('f-nota').value.trim();
+
+  registrarEnN8N({
+    tipo: 'cita',
+    fecha_solicitud: selloDeTiempo(),
+    nombre: nombre,
+    telefono: tel,
+    servicio: servicio,
+    dia_solicitado: dia,
+    horario: hora,
+    nota: nota,
+    origen: 'Landing'
+  });
+
+  var msg =
+    'Hola, soy ' + nombre + '. Quiero agendar una cita en Mayan Biomedical Center Spa.\n\n' +
+    '• Servicio: ' + servicio + '\n' +
+    '• Día: ' + dia + '\n' +
+    '• Horario: ' + hora + '\n' +
+    '• Teléfono: ' + tel + '\n' +
+    (nota ? '• Nota: ' + nota + '\n' : '') +
+    '\n¿Tienen lugar disponible?';
+
+  enviarWhatsApp(msg);
+});
+
+/* =========================================================
+   ENVÍO: INFORMES DEL CURSO
+   ========================================================= */
+document.getElementById('enviar-informes').addEventListener('click', function(){
+  var nombre = document.getElementById('i-nombre').value.trim();
+  var tel    = document.getElementById('i-tel').value.trim();
+  var email  = document.getElementById('i-email').value.trim();
+  document.getElementById('error-informes').classList.remove('visible');
+
+  if (!nombre || !tel || !email){
+    mostrarError('error-informes','Faltan datos: necesitamos tu nombre, teléfono y correo para enviarte la información.');
+    return;
+  }
+
+  var exp = document.getElementById('i-experiencia').value;
+  var msj = document.getElementById('i-mensaje').value.trim();
+
+  registrarEnN8N({
+    tipo: 'curso',
+    fecha_solicitud: selloDeTiempo(),
+    nombre: nombre,
+    telefono: tel,
+    correo: email,
+    experiencia: exp,
+    pregunta: msj,
+    origen: 'Landing'
+  });
+
+  var texto =
+    'Hola, quiero informes de los cursos de masaje.\n\n' +
+    '• Nombre: ' + nombre + '\n' +
+    '• Teléfono: ' + tel + '\n' +
+    '• Correo: ' + email + '\n' +
+    '• Experiencia: ' + exp + '\n' +
+    (msj ? '• Pregunta: ' + msj + '\n' : '');
+
+  enviarWhatsApp(texto);
+});
+</script>
+
+</body>
+</html>

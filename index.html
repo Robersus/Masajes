@@ -663,17 +663,34 @@ function enviarWhatsApp(texto){
 }
 
 /* Envía una copia del registro a n8n.
-   Usa keepalive para que el envío sobreviva al salto a WhatsApp,
-   y no bloquea nunca: si el webhook falla, el cliente igual llega por WhatsApp. */
+   Detalles importantes de esta función:
+   - Usa form-urlencoded en vez de JSON. Con JSON el navegador dispara una
+     petición previa (preflight OPTIONS) que el webhook de n8n no contesta,
+     y el registro se pierde sin mostrar ningún error.
+   - Usa sendBeacon primero, que está diseñado para sobrevivir cuando la
+     página salta a otra app (WhatsApp). Si no existe, cae a fetch.
+   - Nunca bloquea: si falla, el cliente igual llega por WhatsApp. */
 function registrarEnN8N(datos){
   if (!CONFIG.webhook) return;
+
+  var cuerpo = new URLSearchParams();
+  for (var k in datos){
+    if (Object.prototype.hasOwnProperty.call(datos, k)){
+      cuerpo.append(k, datos[k] == null ? '' : String(datos[k]));
+    }
+  }
+
   try {
+    if (navigator.sendBeacon){
+      var blob = new Blob([cuerpo.toString()],
+        { type: 'application/x-www-form-urlencoded;charset=UTF-8' });
+      if (navigator.sendBeacon(CONFIG.webhook, blob)) return;
+    }
     fetch(CONFIG.webhook, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(datos),
-      keepalive: true,
-      mode: 'cors'
+      body: cuerpo,
+      mode: 'no-cors',
+      keepalive: true
     }).catch(function(){ /* silencioso a propósito */ });
   } catch (e) { /* silencioso a propósito */ }
 }
